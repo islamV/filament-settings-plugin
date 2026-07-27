@@ -1,0 +1,63 @@
+{
+    "$schema": "https://getcomposer.org/schema.json",
+    "name": "islamv/filament-settings-plugin",
+    "description": "A reusable, extensible Filament Settings plugin with tabbed UI, Spatie Settings persistence, Artisan generators, automatic discovery, and optional Shield integration.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "filament",
+        "laravel",
+        "settings",
+        "plugin",
+        "spatie",
+        "shield",
+        "tabs",
+        "multilingual"
+    ],
+    "authors": [
+        {
+            "name": "Islam Abdelkarim",
+            "email": "islam@example.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "filament/filament": "^5.0",
+        "laravel/framework": "^11.0|^12.0|^13.0",
+        "spatie/laravel-settings": "^3.3",
+        "spatie/laravel-package-tools": "^1.16"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0|^12.0",
+        "mockery/mockery": "^1.6",
+        "orchestra/testbench": "^9.0|^10.0",
+        "laravel/pint": "^1.0"
+    },
+    "suggest": {
+        "bezhansalleh/filament-shield": "Required for optional Shield permission integration (^4.0)"
+    },
+    "autoload": {
+        "psr-4": {
+            "Islamv\\FilamentSettingsPlugin\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Islamv\\FilamentSettingsPlugin\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Islamv\\FilamentSettingsPlugin\\FilamentSettingsServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
