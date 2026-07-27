@@ -184,7 +184,7 @@ use Spatie\LaravelSettings\Settings;
 
 class {$name}Settings extends Settings
 {
-    /** @var array<string, string> */
+    /** @var array */
     public array \$content = [];
 
     public static function group(): string

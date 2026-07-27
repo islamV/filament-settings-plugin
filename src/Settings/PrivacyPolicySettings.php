@@ -13,7 +13,7 @@ use Spatie\LaravelSettings\Settings;
  */
 class PrivacyPolicySettings extends Settings
 {
-    /** @var array<string, string> */
+    /** @var array */
     public array $content = [];
 
     public static function group(): string
