@@ -34,7 +34,7 @@ class FilamentSettingsPlugin implements Plugin
     /** @var array<string, array<SettingsSubTab>> */
     protected array $manualSubTabs = [];
 
-    /** @var array<string, string|array{label: string, direction: string}> */
+    /** @var array<string, mixed> */
     protected array $locales = [];
 
     protected bool $discoveryEnabled = true;
@@ -135,7 +135,7 @@ class FilamentSettingsPlugin implements Plugin
     }
 
     /**
-     * @param  array<string, string|array{label: string, direction: string}>  $locales
+     * @param  array<string, mixed>  $locales
      */
     public function locales(array $locales): static
     {
@@ -172,7 +172,7 @@ class FilamentSettingsPlugin implements Plugin
     }
 
     /**
-     * @return array<string, string|array{label: string, direction: string}>
+     * @return array<string, mixed>
      */
     public function getLocales(): array
     {
@@ -180,7 +180,7 @@ class FilamentSettingsPlugin implements Plugin
             return $this->locales;
         }
 
-        /** @var array<string, string|array{label: string, direction: string}> */
+        /** @var array<string, mixed> */
         $configLocales = config('filament-settings.locales', []);
 
         return $configLocales;

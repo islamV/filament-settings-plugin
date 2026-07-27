@@ -53,7 +53,7 @@ abstract class SettingsSubTab
     }
 
     /**
-     * @return array<\Filament\Schemas\Components\Component|\Filament\Forms\Components\Field>
+     * @return array
      */
     public function schema(): array
     {

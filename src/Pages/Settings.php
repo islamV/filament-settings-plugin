@@ -260,7 +260,7 @@ class Settings extends Page
      * Build schema for one locale within a translatable sub-tab.
      * Maps field 'content' → state key 'parentKey__subTabKey__content.{locale}'
      *
-     * @return array<\Filament\Schemas\Components\Component|\Filament\Forms\Components\Field>
+     * @return array
      */
     protected function buildLocaleSchema(
         SettingsTab $parentTab,

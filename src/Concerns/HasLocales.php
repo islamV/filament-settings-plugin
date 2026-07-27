@@ -15,13 +15,13 @@ namespace Islamv\FilamentSettingsPlugin\Concerns;
  */
 trait HasLocales
 {
-    /** @var array<string, string|array{label: string, direction?: string}>|null */
+    /** @var array<string, mixed>|null */
     protected ?array $locales = null;
 
     /**
      * Override locales for this tab/sub-tab specifically.
      *
-     * @param  array<string, string|array{label: string, direction?: string}>  $locales
+     * @param  array<string, mixed>  $locales
      */
     public function locales(array $locales): static
     {
@@ -34,7 +34,7 @@ trait HasLocales
      * Get resolved locales.
      * Falls back to plugin-level locales.
      *
-     * @return array<string, string|array{label: string, direction?: string}>
+     * @return array<string, mixed>
      */
     public function getLocales(): array
     {
@@ -49,7 +49,7 @@ trait HasLocales
             return $plugin->getLocales();
         } catch (\Throwable) {
             // Plugin not registered yet (e.g., during tests or early boot)
-            /** @var array<string, string|array{label: string, direction?: string}> */
+            /** @var array<string, mixed> */
             return config('filament-settings.locales', []);
         }
     }
