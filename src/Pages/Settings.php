@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Islamv\FilamentSettingsPlugin\Pages;
 
 use Filament\Actions\Action;
+use Filament\Forms\Concerns\InteractsWithForms;
+use Filament\Forms\Contracts\HasForms;
 use Filament\Notifications\Notification;
 use Filament\Pages\Page;
 use Filament\Schemas\Components\Actions as SchemaActions;
@@ -141,13 +143,20 @@ class Settings extends Page
     // Content schema — the full tabs hierarchy
     // ─────────────────────────────────────────
 
+    public function form(Schema $schema): Schema
+    {
+        return $schema
+            ->statePath('data')
+            ->components([
+                Tabs::make('settings_tabs')
+                    ->persistTabInQueryString('tab')
+                    ->tabs($this->buildMainTabs()),
+            ]);
+    }
+
     public function content(Schema $schema): Schema
     {
-        return $schema->components([
-            Tabs::make('settings_tabs')
-                ->persistTabInQueryString('tab')
-                ->tabs($this->buildMainTabs()),
-        ]);
+        return $this->form($schema);
     }
 
     // ─────────────────────────────────────────
