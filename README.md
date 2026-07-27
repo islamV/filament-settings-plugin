@@ -24,11 +24,10 @@ A production-ready, highly architecture-focused reusable Filament Settings plugi
 
 ## Installation
 
-You can install the package via composer:
+You can install the package via composer (`spatie/laravel-settings` will be automatically installed as a dependency):
 
 ```bash
 composer require islamv/filament-settings-plugin
-composer require spatie/laravel-settings
 ```
 
 Publish and run the Spatie Settings & Plugin migrations:
