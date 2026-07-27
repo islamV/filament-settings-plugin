@@ -36,6 +36,10 @@ class FilamentSettingsServiceProvider extends PackageServiceProvider
 
     public function packageBooted(): void
     {
-        //
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/../stubs' => base_path('stubs/filament-settings'),
+            ], 'filament-settings-stubs');
+        }
     }
 }

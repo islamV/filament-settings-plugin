@@ -1,0 +1,41 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+use Filament\Forms\Components\TextInput;
+use Islamv\FilamentSettingsPlugin\Tabs\SettingsTab;
+use {{ settingsClass }};
+
+class {{ class }} extends SettingsTab
+{
+    protected int $sort = {{ sort }};
+
+    public function getKey(): string
+    {
+        return '{{ key }}';
+    }
+
+    public function getLabel(): string
+    {
+        return '{{ label }}';
+    }
+
+    public function getIcon(): string
+    {
+        return '{{ icon }}';
+    }
+
+    public function getSettingsClass(): string
+    {
+        return {{ settingsClassName }}::class;
+    }
+
+    public function schema(): array
+    {
+        return [
+            // Add your Filament form components here
+        ];
+    }
+}

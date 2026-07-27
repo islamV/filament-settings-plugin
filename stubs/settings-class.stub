@@ -1,0 +1,17 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+use Spatie\LaravelSettings\Settings;
+
+class {{ class }} extends Settings
+{
+    public array $content = [];
+
+    public static function group(): string
+    {
+        return '{{ group }}';
+    }
+}
