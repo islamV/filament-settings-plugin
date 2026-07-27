@@ -8,7 +8,6 @@ use Spatie\LaravelSettings\Settings;
 
 class SocialLinksSettings extends Settings
 {
-    /** @var array */
     public array $links = [];
 
     public static function group(): string

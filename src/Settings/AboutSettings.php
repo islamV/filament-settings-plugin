@@ -8,7 +8,6 @@ use Spatie\LaravelSettings\Settings;
 
 class AboutSettings extends Settings
 {
-    /** @var array */
     public array $content = [];
 
     public static function group(): string
